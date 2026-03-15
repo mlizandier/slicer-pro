@@ -1,8 +1,8 @@
 extends Node2D
 
 var has_click := false
-var click_entry : Vector2;
-var click_exit : Vector2;
+var click_entry: Vector2;
+var click_exit: Vector2;
 
 const FROZEN_GRAVITY = 0.0
 const DEFAULT_GRAVITY = 1.0
@@ -21,14 +21,14 @@ func _input(event: InputEvent) -> void:
 		has_click = false
 		click_exit = get_global_mouse_position();
 		set_slice()
-		
+
 
 func set_slice():
 	var entry_point = Vector2($Top/Sprite2D.global_position.x - ($Top/Sprite2D.get_rect().size.x / 2), $Top/Sprite2D.global_position.y - ($Top/Sprite2D.get_rect().size.y / 2))
-	
-	var entry = (click_entry - entry_point) /  $Top/Sprite2D.get_rect().size
-	var exit = (click_exit - entry_point)  /  $Top/Sprite2D.get_rect().size
-	
+
+	var entry = (click_entry - entry_point) / $Top/Sprite2D.get_rect().size
+	var exit = (click_exit - entry_point) / $Top/Sprite2D.get_rect().size
+
 	$Top/Sprite2D.material.set_shader_parameter('entry_point', entry)
 	$Top/Sprite2D.material.set_shader_parameter('exit_point', exit)
 	$Bottom/Sprite2D.material.set_shader_parameter('entry_point', entry)
