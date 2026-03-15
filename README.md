@@ -31,7 +31,15 @@ entities/sliceable/     # Reusable RigidBody2D scene with sprite + collision sha
   - [ ] Too much force vs some objects will fail
   - [ ] Too little force vs some others will also fail
   - [ ] Indicate needed force
+- [ ] Add places where the cut is supposed to happen
 - [ ] Indicate when user is slicing
 - [ ] Create a nice environment
 - [ ] Multiple stuff to cut through
 - [ ] Sound effects
+- [ ] Score system
+- [ ] Leaderboard
+- [ ] Find a cool name
+
+## Story :
+
+You're a bored retired samurai. Can you slice through retirement?
