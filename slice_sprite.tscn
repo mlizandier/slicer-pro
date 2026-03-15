@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bcrt7g1uldgjd"]
+
+[ext_resource type="Shader" uid="uid://bcqbt1jhx42fw" path="res://slice.gdshader" id="1_tlted"]
+[ext_resource type="Script" uid="uid://bm2syupl2jdsv" path="res://slice_sprite.gd" id="3_7k584"]
+[ext_resource type="PackedScene" uid="uid://cxlv30aqmapu1" path="res://entities/sliceable/sliceable.tscn" id="3_kb533"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kb533"]
+shader = ExtResource("1_tlted")
+shader_parameter/reverse = 0.0
+shader_parameter/entry_point = Vector2(0, 0.7)
+shader_parameter/exit_point = Vector2(1.27, 0.155)
+
+[node name="Main" type="Node2D" unique_id=1630516882]
+material = SubResource("ShaderMaterial_kb533")
+script = ExtResource("3_7k584")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2115926520]
+
+[node name="Top" parent="." unique_id=943687362 instance=ExtResource("3_kb533")]
+gravity_scale = -1.0
+
+[node name="Bottom" parent="." unique_id=1332986445 instance=ExtResource("3_kb533")]
+
+[connection signal="mouse_entered" from="Top" to="." method="_on_top_mouse_entered"]

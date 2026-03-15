@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cxlv30aqmapu1"]
+
+[ext_resource type="Shader" uid="uid://bcqbt1jhx42fw" path="res://slice.gdshader" id="2_28ccy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0yfur"]
+shader = ExtResource("2_28ccy")
+shader_parameter/reverse = 0.0
+shader_parameter/entry_point = Vector2(0, 0)
+shader_parameter/exit_point = Vector2(0, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_28ccy"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28ccy"]
+size = Vector2(128, 128)
+
+[node name="Sliceable" type="RigidBody2D" unique_id=943687362]
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2133600927]
+material = SubResource("ShaderMaterial_0yfur")
+texture = SubResource("CompressedTexture2D_28ccy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1577039153]
+shape = SubResource("RectangleShape2D_28ccy")
