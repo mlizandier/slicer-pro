@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bcrt7g1uldgjd"]
 
-[ext_resource type="Shader" uid="uid://bcqbt1jhx42fw" path="res://slice.gdshader" id="1_tlted"]
-[ext_resource type="Script" uid="uid://bm2syupl2jdsv" path="res://slice_sprite.gd" id="3_7k584"]
+[ext_resource type="Shader" uid="uid://bcqbt1jhx42fw" path="res://shaders/slice.gdshader" id="1_tlted"]
+[ext_resource type="Script" uid="uid://bm2syupl2jdsv" path="res://scripts/slice_sprite.gd" id="3_7k584"]
 [ext_resource type="PackedScene" uid="uid://cxlv30aqmapu1" path="res://entities/sliceable/sliceable.tscn" id="3_kb533"]
+[ext_resource type="PackedScene" uid="uid://pai5ag2msouj" path="res://entities/force_gauge/force_gauge.tscn" id="4_kb533"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kb533"]
 shader = ExtResource("1_tlted")
@@ -22,4 +23,9 @@ gravity_scale = -1.0
 
 [node name="Bottom" parent="." unique_id=1332986445 instance=ExtResource("3_kb533")]
 
+[node name="ForceGauge" parent="." unique_id=749932537 instance=ExtResource("4_kb533")]
+position = Vector2(-2, -180)
+gauge_speed = 5.83
+
+[connection signal="freeze_action" from="." to="ForceGauge" method="_on_freeze_action"]
 [connection signal="mouse_entered" from="Top" to="." method="_on_top_mouse_entered"]

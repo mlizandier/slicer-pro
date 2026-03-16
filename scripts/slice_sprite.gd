@@ -7,6 +7,8 @@ var click_exit: Vector2;
 const FROZEN_GRAVITY = 0.0
 const DEFAULT_GRAVITY = 1.0
 
+signal freeze_action()
+
 func _ready() -> void:
 	$Top/Sprite2D.material = $Top/Sprite2D.material.duplicate()
 	init_sliceable_objects()
@@ -17,6 +19,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
 		has_click = true
 		click_entry = get_global_mouse_position();
+		freeze_action.emit()
 	if event.is_action_released("click"):
 		has_click = false
 		click_exit = get_global_mouse_position();
