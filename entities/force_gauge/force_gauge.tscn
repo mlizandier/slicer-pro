@@ -6,6 +6,7 @@
 script = ExtResource("1_u1y6g")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=127619942]
+modulate = Color(0.6342316, 0.73508525, 0.14355302, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -18,4 +19,5 @@ offset_bottom = 13.5
 grow_horizontal = 2
 grow_vertical = 2
 max_value = 1.0
+value = 0.71
 show_percentage = false

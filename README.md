@@ -26,7 +26,7 @@ entities/sliceable/     # Reusable RigidBody2D scene with sprite + collision sha
 
 ## Next steps :
 
-- [ ] Block user input when objects are falling
+- [x] Block user input when objects are falling
 - [x] Add a force gauge
   - [ ] Too much force vs some objects will fail
   - [ ] Too little force vs some others will also fail
@@ -37,7 +37,6 @@ entities/sliceable/     # Reusable RigidBody2D scene with sprite + collision sha
 - [ ] Multiple stuff to cut through
 - [ ] Sound effects
 - [ ] Find a cool name
-- [ ]
 
 ### Score system :
 
@@ -45,7 +44,7 @@ I'm thinking of implementing a score system and leaderboard but I'm not sure yet
 
 Mayber an endless mode where there are tons of
 
-### Other minigame :
+### Other ideas :
 
 - [ ] Clean your katana
 - [ ] Customize katana particles and stuff
