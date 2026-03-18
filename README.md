@@ -36,7 +36,7 @@ entities/sliceable/     # Reusable RigidBody2D scene with sprite + collision sha
 - [ ] Create a nice environment
 - [ ] Multiple stuff to cut through
 - [ ] Sound effects
-- [ ] Find a cool name
+- [x] Find a cool name
 
 ### Score system :
 
@@ -49,6 +49,12 @@ Mayber an endless mode where there are tons of
 - [ ] Clean your katana
 - [ ] Customize katana particles and stuff
 
+Game modes :
+- cut many items in a short time frame
+- cut many things at once
+
 ## Story :
+
+### Name: Half retired
 
 You're a bored retired samurai. Can you slice through retirement?
