@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://b1liwcag2d010"]
+
+[ext_resource type="Script" uid="uid://bd370ehs73103" path="res://resources/level_data.gd" id="1_or7n4"]
+[ext_resource type="Texture2D" uid="uid://nubjifcuggqu" path="res://assets/diamond_illustration.svg" id="2_or7n4"]
+
+[resource]
+script = ExtResource("1_or7n4")
+texture = ExtResource("2_or7n4")
+min_force = 90
+max_force = 100
+metadata/_custom_type_script = "uid://bd370ehs73103"

@@ -13,7 +13,14 @@ config_version=5
 config/name="slicer-pro"
 run/main_scene="uid://bcrt7g1uldgjd"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
 
 [input]
 
@@ -34,5 +41,6 @@ reset={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"

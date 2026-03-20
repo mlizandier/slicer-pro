@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://dyisw11svdts0"]
+
+[ext_resource type="Script" uid="uid://bd370ehs73103" path="res://resources/level_data.gd" id="1_hrksf"]
+[ext_resource type="Texture2D" uid="uid://ca8v13o2t4033" path="res://assets/bamboo_illustration.svg" id="2_7xi47"]
+
+[resource]
+script = ExtResource("1_hrksf")
+texture = ExtResource("2_7xi47")
+min_force = 50
+max_force = 100
+metadata/_custom_type_script = "uid://bd370ehs73103"
