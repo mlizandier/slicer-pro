@@ -4,6 +4,15 @@ var slice_entry_point: Vector2
 var slice_exit_point: Vector2
 var slice_disabled := false
 
+@export var custom_texture: Texture2D:
+	set(value):
+		print(value)
+		custom_texture = value
+		if $Top and $Bottom: # guard in case called before _ready
+			$Top.custom_texture = value
+			$Bottom.custom_texture = value
+
+
 const FROZEN_GRAVITY = 0.0
 const DEFAULT_GRAVITY = 1.0
 
@@ -12,6 +21,9 @@ signal freeze_action()
 func _ready() -> void:
 	$Top/Sprite2D.material = $Top/Sprite2D.material.duplicate()
 	init_sliceable_objects()
+
+	$Top.custom_texture = custom_texture
+	$Bottom.custom_texture = custom_texture
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("reset"):
@@ -29,7 +41,7 @@ func _input(event: InputEvent) -> void:
 
 func set_slice() -> void:
 	var sprite_top_left_corner = Vector2(
-		$Top/Sprite2D.global_position.x - ($Top/Sprite2D.get_rect().size.x / 2), 
+		$Top/Sprite2D.global_position.x - ($Top/Sprite2D.get_rect().size.x / 2),
 		$Top/Sprite2D.global_position.y - ($Top/Sprite2D.get_rect().size.y / 2)
 	)
 

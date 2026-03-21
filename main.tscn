@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ct71cfkmuxlcq"]
+
+[ext_resource type="Script" uid="uid://dntidypudrryo" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bcrt7g1uldgjd" path="res://slice_sprite.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://klrci0q5s11r" path="res://assets/icon.svg" id="3_h2yge"]
+
+[node name="Main" type="Node2D" unique_id=2096955991]
+script = ExtResource("1_ig7tw")
+
+[node name="SliceSprite" parent="." unique_id=1630516882 instance=ExtResource("2_0xm2m")]
+custom_texture = ExtResource("3_h2yge")

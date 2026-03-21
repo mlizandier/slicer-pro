@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cxlv30aqmapu1"]
 
+[ext_resource type="Script" uid="uid://dyhuy5nhpgb7q" path="res://entities/sliceable/sliceable.gd" id="1_28ccy"]
 [ext_resource type="Shader" uid="uid://bcqbt1jhx42fw" path="res://shaders/slice.gdshader" id="2_28ccy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0yfur"]
@@ -17,6 +18,7 @@ size = Vector2(128, 128)
 [node name="Sliceable" type="RigidBody2D" unique_id=943687362]
 collision_layer = 0
 collision_mask = 0
+script = ExtResource("1_28ccy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2133600927]
 material = SubResource("ShaderMaterial_0yfur")

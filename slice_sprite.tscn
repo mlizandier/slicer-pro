@@ -11,12 +11,13 @@ shader_parameter/reverse = 0.0
 shader_parameter/entry_point = Vector2(0, 0.7)
 shader_parameter/exit_point = Vector2(1.27, 0.155)
 
-[node name="Main" type="Node2D" unique_id=1630516882]
+[node name="SliceSprite" type="Node2D" unique_id=1630516882]
 material = SubResource("ShaderMaterial_kb533")
 script = ExtResource("3_7k584")
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2115926520]
+zoom = Vector2(0.5, 0.5)
 
 [node name="Top" parent="." unique_id=943687362 instance=ExtResource("3_kb533")]
 gravity_scale = -1.0
