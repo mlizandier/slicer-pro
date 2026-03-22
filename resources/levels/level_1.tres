@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_hndnq")
+label = "Godot"
 texture = ExtResource("2_sfdh2")
 max_force = 100
 metadata/_custom_type_script = "uid://bd370ehs73103"

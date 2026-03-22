@@ -26,9 +26,42 @@ func _ready() -> void:
 	$Top.custom_texture = custom_texture
 	$Bottom.custom_texture = custom_texture
 
-func _input(event: InputEvent) -> void:
+	_create_back_button()
+
+func _create_back_button() -> void:
+	var layer := CanvasLayer.new()
+	add_child(layer)
+
+	var btn := Button.new()
+	btn.text = "< Back"
+	btn.position = Vector2(4, 4)
+	btn.add_theme_font_size_override("font_size", 8)
+	btn.flat = true
+	btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color(0.18, 0.18, 0.22, 0.8)
+	style.corner_radius_top_left = 3
+	style.corner_radius_top_right = 3
+	style.corner_radius_bottom_left = 3
+	style.corner_radius_bottom_right = 3
+	style.content_margin_left = 4
+	style.content_margin_right = 4
+	style.content_margin_top = 2
+	style.content_margin_bottom = 2
+	btn.add_theme_stylebox_override("normal", style)
+
+	var hover := style.duplicate()
+	hover.bg_color = Color(0.28, 0.28, 0.34, 0.9)
+	btn.add_theme_stylebox_override("hover", hover)
+
+	btn.pressed.connect(_go_to_menu)
+	layer.add_child(btn)
+
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("reset"):
-		get_tree().reload_current_scene()
+		_go_to_menu()
+		return
 	if slice_disabled:
 		return
 	if event.is_action_pressed("click"):
@@ -69,6 +102,10 @@ func set_gravity(value: float) -> void:
 
 func set_target_zone(min_force: int, max_force: int) -> void:
 	$ForceGauge.set_target_zone(min_force, max_force)
+
+func _go_to_menu() -> void:
+	print("Going to menu")
+	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
 
 func init_sliceable_objects() -> void:
 	set_gravity(FROZEN_GRAVITY)

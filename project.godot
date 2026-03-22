@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="slicer-pro"
-run/main_scene="uid://ct71cfkmuxlcq"
+run/main_scene="res://scenes/level_select.tscn"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://assets/icon.svg"
+
+[autoload]
+
+GameState="*res://scripts/game_state.gd"
 
 [display]
 

@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_or7n4")
+label = "Diamond"
 texture = ExtResource("2_or7n4")
 min_force = 90
 max_force = 100

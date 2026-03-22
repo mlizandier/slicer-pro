@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_hrksf")
+label = "Sandwich"
 texture = ExtResource("2_hrksf")
 min_force = 20
 max_force = 40

@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_onuep")
+label = "Bamboo"
 texture = ExtResource("2_mnyl5")
 min_force = 50
 max_force = 100
