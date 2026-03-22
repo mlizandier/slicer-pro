@@ -11,5 +11,5 @@ void fragment() {
 	
 	vec4 color = texture(TEXTURE, UV);
 	COLOR = color;
-	COLOR.a = is_cut_point;
+	COLOR.a = color.a * is_cut_point;
 }

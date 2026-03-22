@@ -1,9 +1,9 @@
 extends Node2D
 
-var slice_entry_point: Vector2
-var slice_exit_point: Vector2
-var slice_disabled := false
+# Signals
+signal freeze_action()
 
+# Exported vars
 @export var custom_texture: Texture2D:
 	set(value):
 		print(value)
@@ -12,11 +12,12 @@ var slice_disabled := false
 			$Top.custom_texture = value
 			$Bottom.custom_texture = value
 
-
+# Variables
+var slice_entry_point: Vector2
+var slice_exit_point: Vector2
+var slice_disabled := false
 const FROZEN_GRAVITY = 0.0
 const DEFAULT_GRAVITY = 1.0
-
-signal freeze_action()
 
 func _ready() -> void:
 	$Top/Sprite2D.material = $Top/Sprite2D.material.duplicate()
@@ -34,6 +35,9 @@ func _input(event: InputEvent) -> void:
 		slice_entry_point = get_global_mouse_position()
 		freeze_action.emit()
 	if event.is_action_released("click"):
+		if not $ForceGauge.is_force_valid():
+			$ForceGauge.is_moving = true
+			return
 		slice_disabled = true
 		slice_exit_point = get_global_mouse_position()
 		set_slice()
@@ -62,6 +66,9 @@ func set_slice() -> void:
 func set_gravity(value: float) -> void:
 	$Top.gravity_scale = value
 	$Bottom.gravity_scale = value
+
+func set_target_zone(min_force: int, max_force: int) -> void:
+	$ForceGauge.set_target_zone(min_force, max_force)
 
 func init_sliceable_objects() -> void:
 	set_gravity(FROZEN_GRAVITY)

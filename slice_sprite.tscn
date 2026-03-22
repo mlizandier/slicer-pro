@@ -25,7 +25,7 @@ gravity_scale = -1.0
 [node name="Bottom" parent="." unique_id=1332986445 instance=ExtResource("3_kb533")]
 
 [node name="ForceGauge" parent="." unique_id=749932537 instance=ExtResource("4_kb533")]
-position = Vector2(-2, -180)
+position = Vector2(0, -116)
 gauge_speed = 5.83
 
 [connection signal="freeze_action" from="." to="ForceGauge" method="_on_freeze_action"]
